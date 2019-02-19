@@ -11,6 +11,11 @@ export class NameEditorComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    this.name.setValue('Bienvenidos a la meetup');
+  }
+
+  changeValue(value) {
+    this.name.setValue(value);
   }
 
 }

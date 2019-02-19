@@ -2,6 +2,7 @@
   Name:
   <input type="text" [formControl]="name">
 </label>
+<button (click)="changeValue('me cambiaron el valor')">Change value</button>
 <p>
   Value: {{ name.value }}
 </p>
