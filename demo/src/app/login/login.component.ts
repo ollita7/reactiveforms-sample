@@ -1,21 +1,26 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { FormBuilder, Validators } from '@angular/forms';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  styleUrls: ['./login.component.less']
 })
 export class LoginComponent implements OnInit {
   loginForm = this.fb.group({
-    mail: ['test@dfaslf', Validators.required],
-    password: ['', Validators.required ]
+    email: ['', Validators.required],
+    password: ['']
   });
+  submitted = false;
 
   constructor(private fb: FormBuilder) { }
 
   ngOnInit() {
   }
 
-  onSubmit() { }
+  get f() { return this.loginForm.controls; }
+
+  onSubmit() {
+    this.submitted = true;
+  }
 
 }
